@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Cpu, Cloud, Database, Code, Server, Zap } from "lucide-react";
+import SafeButton from "./safe-button";
 
 const TechStack = () => {
   const [ref, inView] = useInView({

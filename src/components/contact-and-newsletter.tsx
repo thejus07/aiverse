@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { MapPin } from "lucide-react";
+import SafeInput from "./safe-input";
+import SafeButton from "./safe-button";
 
 const ContactAndNewsletter = () => {
   const [ref, inView] = useInView({
@@ -67,44 +69,27 @@ const ContactAndNewsletter = () => {
           >
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Contact Form</h3>
             <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="mt-1 block w-full px-5 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-primary-600 focus:border-primary-600 sm:text-sm"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="mt-1 block w-full px-5 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-primary-600 focus:border-primary-600 sm:text-sm"
-                />
-              </div>
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                  Company
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  className="mt-1 block w-full px-5 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-primary-600 focus:border-primary-600 sm:text-sm"
-                />
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-                >
-                  Send Message
-                </button>
-              </div>
+              <SafeInput
+                type="text"
+                id="name"
+                label="Full Name"
+              />
+              <SafeInput
+                type="email"
+                id="email"
+                label="Email"
+              />
+              <SafeInput
+                type="text"
+                id="company"
+                label="Company"
+              />
+              <SafeButton
+                type="submit"
+                className="w-full"
+              >
+                Send Message
+              </SafeButton>
             </form>
           </motion.div>
 

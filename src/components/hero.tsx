@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
+import { useHydration } from "@/hooks/useHydration";
 
 const Hero = () => {
+  const isHydrated = useHydration();
+
   return (
     <section
       id="home"

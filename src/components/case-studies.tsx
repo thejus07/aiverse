@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ArrowRight, ExternalLink, TrendingUp, Users, Clock } from "lucide-react";
 import { useState } from "react";
+import SafeButton from "./safe-button";
 
 const CaseStudies = () => {
   const [ref, inView] = useInView({
@@ -124,17 +125,14 @@ const CaseStudies = () => {
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
           {caseStudies.map((study, index) => (
-            <button
+            <SafeButton
               key={study.id}
               onClick={() => setActiveCase(index)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                activeCase === index
-                  ? "bg-primary-600 text-white shadow-lg"
-                  : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-              }`}
+              variant={activeCase === index ? "primary" : "outline"}
+              className={activeCase === index ? "" : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"}
             >
               {study.category}
-            </button>
+            </SafeButton>
           ))}
         </motion.div>
 

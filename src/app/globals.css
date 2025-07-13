@@ -96,3 +96,25 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Hide browser extension attributes that cause hydration issues */
+[data-gr-ext-installed],
+[fdprocessedid] {
+  /* These attributes are added by browser extensions and can cause hydration mismatches */
+  /* We don't need to style them, just ensure they don't affect layout */
+}
+
+/* Ensure consistent button rendering */
+button {
+  /* Prevent browser extensions from affecting button appearance */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Ensure form elements render consistently */
+input, textarea, select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}

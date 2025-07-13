@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Search, Wrench, Rocket, CheckCircle } from "lucide-react";
+import SafeButton from "./safe-button";
 
 const HowItWorks = () => {
   const [ref, inView] = useInView({

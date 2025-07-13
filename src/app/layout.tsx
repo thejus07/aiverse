@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Fira_Code } from "next/font/google";
 import "./globals.css";
+import "./client-script";
 import { ThemeProvider } from "@/components/theme-provider";
+import HydrationWrapper from "@/components/hydration-wrapper";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -65,6 +67,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${firaCode.variable} font-sans antialiased`}
+        suppressHydrationWarning
       >
         <ThemeProvider
           attribute="class"
@@ -72,7 +75,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
-          {children}
+          <HydrationWrapper>
+            {children}
+          </HydrationWrapper>
         </ThemeProvider>
       </body>
     </html>

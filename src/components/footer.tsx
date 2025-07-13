@@ -11,6 +11,8 @@ import {
   Phone, 
   MapPin 
 } from "lucide-react";
+import SafeInput from "./safe-input";
+import SafeButton from "./safe-button";
 
 const Footer = () => {
   const [ref, inView] = useInView({
@@ -175,19 +177,18 @@ const Footer = () => {
               Subscribe to our newsletter for the latest AI trends, case studies, and industry insights.
             </p>
             <form className="max-w-md mx-auto flex gap-4">
-              <input
+              <SafeInput
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-primary-300 focus:outline-none focus:ring-2 focus:ring-white text-gray-900"
+                className="flex-1 text-gray-900"
               />
-              <motion.button
+              <SafeButton
                 type="submit"
-                className="bg-white text-primary-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                variant="outline"
+                className="bg-white text-primary-600 hover:bg-gray-100"
               >
                 Subscribe
-              </motion.button>
+              </SafeButton>
             </form>
           </div>
         </div>

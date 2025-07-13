@@ -12,6 +12,7 @@ import {
   Bot,
   Database 
 } from "lucide-react";
+import SafeButton from "./safe-button";
 
 const Services = () => {
   const [ref, inView] = useInView({
@@ -146,13 +147,14 @@ const Services = () => {
               </ul>
 
               {/* Learn More Button */}
-              <motion.button
-                className="flex items-center gap-2 text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-300"
-                whileHover={{ x: 5 }}
+              <SafeButton
+                variant="outline"
+                size="sm"
+                className="flex items-center gap-2 text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300"
               >
                 Learn More
                 <ArrowRight className="w-4 h-4" />
-              </motion.button>
+              </SafeButton>
 
               {/* Hover Effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary-600/0 to-primary-600/0 group-hover:from-primary-600/5 group-hover:to-primary-600/5 transition-all duration-300 pointer-events-none" />

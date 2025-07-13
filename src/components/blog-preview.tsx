@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { PenTool, MessageSquare } from "lucide-react";
+import SafeButton from "./safe-button";
 
 const BlogPreview = () => {
   const [ref, inView] = useInView({
@@ -122,9 +123,13 @@ const BlogPreview = () => {
                       {post.date}
                     </span>
                   </div>
-                  <button className="text-primary-600 dark:text-primary-400 font-medium hover:underline">
+                  <SafeButton
+                    variant="outline"
+                    size="sm"
+                    className="text-primary-600 dark:text-primary-400 font-medium hover:underline"
+                  >
                     Read More
-                  </button>
+                  </SafeButton>
                 </div>
               </div>
             </motion.div>
