@@ -14,8 +14,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <Services />
-      <HowItWorks />
+      {/* <Services /> removed for modal usage */}
       <CaseStudies />
       <Testimonials />
       <TechStack />

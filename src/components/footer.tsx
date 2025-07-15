@@ -116,16 +116,27 @@ const Footer = () => {
                   {category}
                 </h3>
                 <ul className="space-y-2">
-                  {links.map((link) => (
-                    <li key={link.name}>
+                  {category === "Services" ? (
+                    <li>
                       <a
-                        href={link.href}
+                        href="#services"
                         className="text-gray-300 hover:text-primary-400 transition-colors duration-300"
                       >
-                        {link.name}
+                        Services
                       </a>
                     </li>
-                  ))}
+                  ) : (
+                    links.map((link) => (
+                      <li key={link.name}>
+                        <a
+                          href={link.href}
+                          className="text-gray-300 hover:text-primary-400 transition-colors duration-300"
+                        >
+                          {link.name}
+                        </a>
+                      </li>
+                    ))
+                  )}
                 </ul>
               </motion.div>
             ))}

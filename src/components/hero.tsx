@@ -3,9 +3,13 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import { useHydration } from "@/hooks/useHydration";
+import { useState } from "react";
+import SafeButton from "./safe-button";
+import Services from "./services";
 
 const Hero = () => {
   const isHydrated = useHydration();
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   return (
     <section
@@ -42,75 +46,52 @@ const Hero = () => {
           Transform Your Business with{" "}
           <span className="gradient-text">Intelligent Automation</span>
         </motion.h1>
-
+        <div className="flex justify-center items-center leading-tight">
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="items-center text-xl md:text-5x3 text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-          We deliver cutting-edge AI solutions that drive growth, reduce costs,
-          and unlock new opportunities for your business through machine learning,
-          computer vision, and intelligent automation.
+        We deliver cutting-edge AI solutions that drive growth, reduce costs and unlock new opportunities for your business through machine learning,
+        computer vision, and intelligent automation.
         </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
-        >
-          <motion.a
-            href="#contact"
-            className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get Your Free AI Audit
-            <ArrowRight className="w-5 h-5" />
-          </motion.a>
-          <motion.button
-            className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2 backdrop-blur-lg border border-white/20"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Play className="w-5 h-5" />
-            Watch Demo
-          </motion.button>
-        </motion.div>
+        </div>
 
         {/* Stats */}
+        <div className="flex justify-center items-center mt-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-4 gap-15 max-w-4xl mx-auto"
         >
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+            <div className="text-3xl md:text-4xl font-bold text-white mb-2 mt-6">
               500+
             </div>
             <div className="text-white/70">AI Models Deployed</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+            <div className="text-3xl md:text-4xl font-bold text-white mb-2 mt-6">
               95%
             </div>
             <div className="text-white/70">Accuracy Rate</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+            <div className="text-3xl md:text-4xl font-bold text-white mb-2 mt-6">
               50M+
             </div>
             <div className="text-white/70">Data Points Processed</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+            <div className="text-3xl md:text-4xl font-bold text-white mb-2 mt-6">
               24/7
             </div>
             <div className="text-white/70">Support Available</div>
           </div>
         </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}

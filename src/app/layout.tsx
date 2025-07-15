@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description: "Leading AI agency delivering end-to-end machine learning, computer vision, NLP, and data automation services. Get your free AI audit today.",
   keywords: "AI, machine learning, computer vision, NLP, automation, artificial intelligence, data science",
   authors: [{ name: "AiVerse" }],
-  creator: "AiVerse",
+  creator: "MR.THEJUS M",
   openGraph: {
     title: "AiVerse - Transform Your Business with Intelligent Automation",
     description: "Leading AI agency delivering end-to-end machine learning, computer vision, NLP, and data automation services.",
