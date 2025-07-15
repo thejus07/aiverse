@@ -37,15 +37,15 @@ const Header = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <div className="h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 p-20">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className=" space-x-2"
+              className=" space-x-4"
             >
               <span className="text-xl font-bold gradient-text">
                 AiVerse
@@ -54,7 +54,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="flex items-center justify-center hidden md:flex space-x-8">
+          <nav className=" hidden md:flex align-items:center hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0space-x-8 ">
             {navigation.map((item) => {
               if (item.name === "Services") {
                 return (

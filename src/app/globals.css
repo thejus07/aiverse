@@ -118,3 +118,8 @@ input, textarea, select {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
+
+.p-20{
+  padding:20px;
+}
+
